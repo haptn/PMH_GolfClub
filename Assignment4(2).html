@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Giới thiệu </title>
+		<link href="header.html" rel="import" />
+		<style>
+			body {font-family: Arial;
+                  background-color: beige}
+            
+            * {margin: 0; padding: 0; 
+               box-sizing: border-box}
+            
+			/*=====================================================*/
+            
+			#content {width: 80%; height: 1750px;
+                      background-color: white;
+                      margin: auto; margin-top: 0%; padding-left: 1%;
+                      box-sizing: border-box;}
+			
+            #p1 {font-size: 18px; padding: 10px 0 12px 100px}
+            
+            #to {width: 75%; height: 500px;
+                 margin: 10px 0 10px 116.5px}
+            
+            #list {width: auto; height: 60px;
+                   margin-left: 234px}
+            
+            .nho {width: 80px; height: 60px;
+                  margin: 0 8px 0 0;
+                  float: left}
+            
+            #p2 {font-size: 18px;
+                 text-align: center}
+            
+            .csvc {width: 350px; height: 230px;
+                   margin: 15px 0 30px 95px;
+                   padding: 0;
+                   float: left}
+            
+            .csvc img {width: 350px; height: 230px;
+                       margin: 0 0 2px 0}
+            .csvc p {text-align: center;
+                     margin: 0}
+            
+/*
+            #csvc2 {width: 700px; height: 460px;
+                    position: fixed; top: 100px; left: 280px;
+                    border-bottom-right-radius: 65px; border-top-left-radius: 65px;
+                    opacity: 0}
+*/
+            /*=====================================================*/           
+            #footer2 {width: 80%; height: 40px;
+                      background-color: darkgreen; color: lightgray;
+                      margin: auto; margin-top: 0%; padding-left: 2%; padding-top: 0.9%;
+                      box-sizing: border-box;}
+            
+            #chatbox {width: 95px; height: 28px;
+                      background-color: red;
+                      border-top-left-radius: 10px; border-top-right-radius: 10px;
+                      position: fixed; right: 3px; bottom: 0px;
+                      z-index: 2}
+			#chatbox span {margin: 5.5px 7px 0 0;
+                           position: absolute; right: 5px}	/*2 dòng này tương đương dòng "float: right"*/
+			#chatbox span:hover {cursor: pointer;}			/*pseudo classess*/
+            
+            #lh {width: 25px; height: 25px;
+                 margin: 1.5px 0 0 5.5px}
+
+		</style>
+        
+        <script>
+            //"Slide show"
+            function showBorder(x)
+			{
+				x.style.border = "2px solid grey";
+			}
+			function hideBorder(x)
+			{
+				x.style.border = "none";
+			}
+			
+			function changeSrc(anhnho, id_anhto)
+			{
+				var anhto = document.getElementById(id_anhto);
+				anhto.src = anhnho.src;
+			}
+            
+            function lammo(x, domo)
+            {
+                x.style.opacity = domo;
+            }
+            
+            // Sờ vào hình thì mờ hình nhỏ và xuất lên hình to
+//            function phongto(x, domo1, domo2)
+//            {
+//                var csvc = document.getElementsByClassName("csvc");
+//                csvc.style.opacity = domo1;
+//                var csvc2 = document.getElementsById("csvc2");
+//                csvc2.style.opacity = domo2;
+//            }
+            
+            // Bấm vào hình thì hiện to lên
+//            function alert(x)
+//			{
+//				x = document.getElementsByClassName("csvc");
+//				alert(x);
+//			}
+        </script>
+    </head>
+	
+    <body>
+		<link href="header.html" rel="import" />
+        
+        <!--======================================-->
+        <div id = "content">
+            <br><br>
+            <img src = "bullet2.png" style = "width: 40px; height: 35px; float: left; margin: -8px 15px 0 45px">
+            <h2><b> ĐỊA ĐIỂM </b></h2>
+            <p id = "p1"> Sân golf Nam Sài Gòn (Saigon South Golf Club) tọa lạc tại trung tâm KĐT Phú Mỹ Hưng. </p>
+            
+            <img src = "pmh(1).png" id = "to">
+            <div id = "list">
+                <img src = "pmh(1).png" onmouseover = "showBorder(this); changeSrc(this, 'to'); lammo(this, 0.7)" onmouseout = "hideBorder(this); lammo(this, 1)" class = "nho"/>
+                <img src = "pmh(2).png" onmouseover = "showBorder(this); changeSrc(this, 'to'); lammo(this, 0.7)" onmouseout = "hideBorder(this); lammo(this, 1)" class = "nho" />
+                <img src = "pmh(3).png" onmouseover = "showBorder(this); changeSrc(this, 'to'); lammo(this, 0.7)" onmouseout = "hideBorder(this); lammo(this, 1)" class = "nho" />
+                <img src = "pmh(4).png" onmouseover = "showBorder(this); changeSrc(this, 'to'); lammo(this, 0.7)" onmouseout = "hideBorder(this); lammo(this, 1)" class = "nho" />
+                <img src = "pmh(5).png" onmouseover = "showBorder(this); changeSrc(this, 'to'); lammo(this, 0.7)" onmouseout = "hideBorder(this); lammo(this, 1)" class = "nho" />
+                <img src = "pmh(6).png" onmouseover = "showBorder(this); changeSrc(this, 'to'); lammo(this, 0.7)" onmouseout = "hideBorder(this); lammo(this, 1)" class = "nho" />
+            </div>
+            <br>
+            <p id = "p2"> Trong vòng 20 năm trở lại đây, Phú Mỹ Hưng (Nam Sài Gòn, quận 7, Tp.HCM) <br> đã trở thành khu đô thị hiện đại kiểu mẫu cho cả nước. </p>    <!-- thẻ span ko canh lề giữa được! -->
+            <br>
+            <br>
+            <br>
+            <img src = "bullet2.png" style = "width: 40px; height: 35px; float: left; margin: -8px 15px 0 45px">
+            <h2><b> CƠ SỞ VẬT CHẤT </b></h2>
+            <div class = "csvc">        <!-- Tại sao chỗ này dùng cả onmouseover với onclick mà đều ko gọi được -->
+                <img src = "nsg1.jpg">    <!-- ham phongto(this, 0, 1) nhỉ??? -->
+                <p><i> Sân tập 2 tầng </i></p>
+            </div>
+            <div class = "csvc">
+                <img src = "nsg2.jpg">
+                <p><i> Sân Golf tiêu chuẩn 9 lỗ </i></p>
+            </div>
+            <br><br>
+            <div class = "csvc">
+                <img src = "k2.jpg">
+                <p><i> Sân Golf cho thiếu nhi </i></p>
+            </div>
+            <div class = "csvc">
+                <img src = "nh.jpg">
+                <p><i> Nhà hàng </i></p>
+            </div>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
+            <img src = "bullet2.png" style = "width: 40px; height: 35px; float: left; margin: -8px 15px 0 45px">
+            <h2><b> DỊCH VỤ </b></h2>
+            <div class = "csvc">
+                <img src = "k3.png">
+                <p><i> Các khóa học Golf cơ bản </i></p>
+            </div>
+            <div class = "csvc">
+                <img src = "k4.JPG">
+                <p><i> Cho thuê Huấn luyện viên </i></p>
+            </div>
+            
+<!--            <img src = "pmh(1).png" id = "csvc2">-->
+        </div>
+        
+        <!--======================================-->
+        
+        <div id = "footer2">
+            <span style = "color: gainsboro"> Thiết kế bởi Phạm Thị Ngọc Hà (SE130460) - SE1301 - FPTU HCM </span>
+        </div>
+        
+        <div id = "chatbox" onclick = "chat()">
+			<span> Hỗ trợ </span>
+            <img src = "lh.png" id = "lh">
+		</div>
+    </body>
+</html>

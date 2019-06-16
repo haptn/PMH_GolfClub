@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			body {font-family: Arial;
+                  background-color: beige}
+            
+            * {margin: 0; padding: 0}
+            
+			#header {width: 80%; height: 70px;
+                     background-color: whitesmoke;
+                     margin: auto; padding-left: 2%;
+                     line-height: 50px; box-sizing: border-box;}
+            
+			#lg {width: 53px; height: 60px;
+                 margin: 0.4%;
+                 float: left}
+            
+            #h {width: 300px; height: 65px;
+                font-size: 25px;
+                color: green;
+                line-height: 65px;
+                margin-left: 0.7%;
+                float: left}
+            
+            #pmh {width: 85px; height: 57px;
+                  margin: 0.55% 3% 0 0;
+                  float: right}
+			
+            #menu1 {width: 80%; height: 40px;
+                    background-color: forestgreen;
+                    margin: auto;
+                    box-sizing: border-box}
+            
+            ul#u {height: 40px;
+                         margin-left: 11px;
+                         box-sizing: border-box;
+                         list-style: none;
+                         float: left}
+            
+            ul#u > li {width: 110px; height: 40px;
+                       font-size: 16.5px;
+                       padding-top: 1.65%;
+                       text-align: center;
+                       list-style: none;
+                       position: relative; float: left;
+                       box-sizing: border-box}
+            
+            ul#u li:hover {background-color: lemonchiffon}
+            ul#u li:hover ul {display: block}
+            ul#u > li:hover .a {color: darkslategrey;
+                              font-weight: 600;
+                              text-decoration: none}
+            
+            #u > li > a {color: aliceblue;
+                         text-decoration: none}
+            
+            .menu2 {width: 145%; height: auto;
+                    background-color: forestgreen;
+                    margin-top: 9px;
+                    display: none;
+                    list-style: none;
+                    padding: 0 0 0 0;
+                    z-index: 2;
+                    position: relative;
+                    box-sizing: border-box}
+            
+            .menu2 li {width: 100%;
+                       text-align: left;
+                       border-top: 1px solid darkslategrey;
+                       padding: 10px 0 10px 5px;
+                       box-sizing: border-box}
+            
+            .l1:hover {background-color: lemonchiffon}
+            .l1:hover .a1 {color: darkslategrey;    
+                           font-weight: 600;
+                           text-decoration: none}
+            
+            .menu2 a {width: 150px;
+                      color: aliceblue;
+                      text-decoration: none;
+                      display: block}
+            
+            #ui {width: 25px; height: 40px;
+                 margin-left: 235px;
+                 float: left;
+                 position: relative;
+                 z-index: 2;
+                 box-sizing: border-box}
+            
+            #ui > li {width: 25px; height: 40px;
+                       list-style: none;
+                       position: relative; float: left;
+                       box-sizing: border-box}
+            #ui li:hover iu {display: block}
+            #ui img:hover iu {display: block}
+            
+            #ic {width: 25px; height: 25px;
+                 position: absolute; top: 6.8px;
+                 z-index: 2;
+                 transition: all 0.3s;
+                 box-sizing: border-box}
+            
+            
+            #iu {width: 100px; height: 50px;
+                 background-color: lightgray;
+                 text-align: center; font-weight: 600;
+                 border-bottom: 1px solid darkgray;
+                 margin-top: 9px;
+                 list-style: none;
+                 padding: 0;
+                 box-sizing: border-box;
+                 position: absolute; top: 23.7px; right: -37px;
+                 z-index: 2;
+                 display: block;
+                 opacity: 0}
+            
+            #iu li {width: 100%; height: 25px;
+                    text-align: center; line-height: 25px;
+                    border-top: 1px solid darkslategrey;
+                    padding: 0;
+                    box-sizing: border-box}
+            
+            #iu li:hover {background-color: lemonchiffon}
+            #iu li:hover a {color: darkslategrey;    
+                           font-weight: 600;
+                           text-decoration: none}
+            
+            #iu a {width: 100px;
+                   color: dimgray;
+                   text-decoration: none;
+                   display: block;
+                   box-sizing: border-box}
+            
+            #se {width: 25px; height: 25px;
+                 float: right;
+                 margin: 0.65% 3.6% 0 0;
+                 position: relative; z-index: 3}
+            
+            #sebox {width: 200px; height: 30px;
+                    border: 2.1px solid gainsboro;
+                    color: gainsboro;
+                    line-height: 30px;
+                    margin: 0.25% 3.6% 0 0; padding-left: 5px;
+                    position: absolute; right: 110px;
+                    opacity: 0;
+                    z-index: 2;
+                    transition: all 0.3s}
+		</style>
+        
+        <script>
+            // Sờ vào biểu tượng search thì hiện ra khung search và mất hình liên hệ
+            function faded(domo1, domo2)
+            {
+                var ic = document.getElementById("ic");
+                ic.style.opacity = domo1;
+                var sebox = document.getElementById("sebox");
+                sebox.style.opacity = domo2;
+            }
+            
+            function appear(domo)
+            {
+                var iu = document.getElementById("iu", "iul");
+                iu.style.opacity = domo;
+            }
+            
+//            function changeSrc(trang, id_den)
+//			{
+//				var den = document.getElementById(id_den);
+//				den.src = trang.src;
+//			}
+
+            
+            
+            // Bấm mũi tên để chuyển ảnh
+            var count = 1;
+            function truotTrai()
+            {
+                if (count >= 1)
+                {
+                    count--;
+                    div = document.getElementById("cover");
+                    div.style.transform = "translateX(" + (count * (-1024)) + "px)";
+                }
+                else
+                {
+                    count = 3;
+                    div = document.getElementById("cover");
+                    div.style.transform = "translateX(" + (count * (-1024)) + "px)";
+                }
+            }
+               
+            function truotPhai()
+            {
+                if (count < 4)
+                {
+                    div = document.getElementById("cover");
+                    div.style.transform = "translateX(" + (count * (-1024)) + "px)";
+                    count++;
+                }
+                else
+                {
+                    count = 0;
+                    div = document.getElementById("cover");
+                    div.style.transform = "translateX(" + (count * (-1024)) + "px)";
+                }
+            }
+            
+            // Đóng / mở ô chát góc phải dưới (chưa chạy được)
+//            function chat()
+//			{
+//				// Lấy thẻ có id = "d3"
+//				var tmp = document.getElementByID("chatbox");
+//				// tmp.style.opacity = 0;				// Cách 1
+//				 tmp.style.visibility = "hidden";		// Cách 2: Biến mất và để lại khoảng tonge
+////				tmp.style.display = "none";				// Cách 3: Biến mất và đẩy nội dung dưới lên
+//			}
+
+        </script>
+    </head>
+	
+	<body>
+		<div id = "header">
+			<img src = "lg1.png" id = "lg">
+			<div id = "h"> Saigon South Golf Club </div>   <!--Chỗ này về thiết kế trên PhotoShop cho đẹp. -->
+            <img src = "pmh.png" id = "pmh">
+		</div>
+		
+        <div id = "menu1">
+            <ul id = "u">
+                <li><a href="Assignment4(1).html" class = "a"> Trang chủ </a></li>
+                <li><a href="Assignment4(2).html" class = "a"> Giới thiệu </a></li>
+                <li>
+                    <a href="Assignment4(3).html" class = "a"> Tin tức </a>
+                    <ul class = "menu2">
+                        <li class = "l1"><a href = "Assignment4(3a).html" class = "a1"> Giải Golf </a></li>
+                        <li class = "l1"><a href = "Assignment4(3b).html" class = "a1"> Khuyến mãi </a></li>
+                    </ul>
+                </li>
+                <li><a href="Assignment4(4).html" class = "a"> Thông tin </a>
+                    <ul class = "menu2">
+                        <li class = "l1"><a href = "Assignment4(4a).html" class = "a1"> Luật Golf </a></li>
+                        <li class = "l1"><a href = "Assignment4(4b).html" class = "a1"> Dụng cụ chơi Golf </a></li>
+                        <li class = "l1"><a href = "Assignment4(4c).html" class = "a1"> Hướng dẫn cơ bản </a></li>
+                    </ul>
+                </li>
+                <li><a href="Assignment4(5).html" class = "a"> Liên hệ </a></li>
+                <li><a href="Assignment4(6).html" class = "a"> Tham khảo </a></li>
+            </ul>
+            
+            <ul id = "ui" onmouseover = "appear(1)" onmouseout = "appear(0)"> 
+                <li>
+                    <img src = "ic1.png" id = "ic" onmouseover = "appear(1)" onmouseout = "appear(0)" />
+                    <ul id = "iu">
+                        <li id = "iul"><a href = "Assignment4(LogForm).html"> Đăng nhập </a></li>
+                        <li id = "iul"><a href = "Assignment4(SignForm).html"> Đăng kí </a></li>
+                    </ul>
+                </li>
+            </ul>
+            <img src = "se.png" id = "se" onmouseover = "faded(0, 1)" onmouseout = "faded(1, 0)"/>
+            <div id = "sebox"> Tìm kiếm... </div>
+        </div>
+        
+        <!-- Mục đích của việc này là để tải các trang còn lại lên bằng iframe mà vẫn giữ được từ cái menu trở lên và được cái footer dưới cùng -->
+<!--        <iframe width = "80%" height = "730px" margin = auto margin = 0px src = "Assignment4(1).html" name = "ifr"></iframe>-->
+<!--        <div id = "frame">-->       <!-- Chưa nghĩ ra cái gì cả! -->
+            <div id = "wrap">
+                <img src = "al.png" id = "al" onclick = "truotTrai()">
+                <img src = "ar.png" id = "ar" onclick = "truotPhai()">
+
+                <div id = "cover">
+                    <img src = "c2.jpg" id = "c1" class = "co">
+                    <img src = "c3.jpg" id = "c2" class = "co">
+                    <img src = "c5.jpg" id = "c3" class = "co">
+                    <img src = "c8.jpg" id = "c4" class = "co">
+                </div>
+            </div>
+	</body>
+</html>
